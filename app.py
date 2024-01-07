@@ -30,9 +30,9 @@ if plot:
         
         
     else:
-        state_df=  df[df["State"]== selected_state]
+        state_df = df[df["State"]== selected_state]
         
-        fig = px.scatter_mapbox(df, lat="Latitude", lon="Longitude", size=Primary, color=Secondary, zoom=4
+        fig = px.scatter_mapbox(state_df, lat="Latitude", lon="Longitude", size=Primary, color=Secondary, zoom=4
                                 , size_max=35, color_continuous_scale=px.colors.sequential.Viridis, mapbox_style="carto-positron",width=1200,height=700,hover_name='District')
 
         st.plotly_chart(fig,use_container_width=True)
